@@ -5,6 +5,11 @@ Publish into an docker image:
 dotnet publish --os linux --arch x64 /t:PublishContainer -c Release 
 ```
 
+## Roadmap
+
+- use the TCP port
+- pass the SAS out 
+
 
 ---
 

@@ -28,7 +28,7 @@ Warning: this will produce two images (of course) one tagged 'dbj-0.0.1' and one
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-DotNet.ContainerImage-2cb694a9-5459-404b-8425-a34e30271b55</UserSecretsId>
     <ContainerImageName>sasser-image</ContainerImageName>
-    <ContainerImageTags>dbj-0.0.1;latest</ContainerImageTags>
+    <ContainerImageTags>dbj-0.0.2</ContainerImageTags>
   </PropertyGroup>
 
   <ItemGroup>
