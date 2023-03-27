@@ -1,9 +1,8 @@
-using DotNet.ContainerImage;
-
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
-        services.AddHostedService<Worker>();
+        services.AddHostedService<sasser.Worker>();
+        services.AddHostedService<sasser.SAS>();
     })
     .Build();
 

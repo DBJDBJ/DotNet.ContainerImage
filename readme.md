@@ -8,6 +8,8 @@ dotnet publish --os linux --arch x64 /t:PublishContainer -c Release
 ## Roadmap
 
 - use the TCP port
+  - there are many advice against [web socket](https://learn.microsoft.com/en-us/dotnet/api/system.net.websockets.clientwebsocket?view=net-7.0)
+  - consider JSON-RPC, too
 - pass the SAS out 
 
 

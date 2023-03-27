@@ -1,4 +1,4 @@
-namespace DotNet.ContainerImage;
+namespace sasser;
 
 public class Worker : BackgroundService
 {

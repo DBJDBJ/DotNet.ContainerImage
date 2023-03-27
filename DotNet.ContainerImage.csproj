@@ -2,11 +2,15 @@
   <PropertyGroup>
     <Description>
 <![CDATA[
+
+You must write comment is csproj files like this. http like comments 
+do not work because text inside them is expanded too.
+----------------------------------------------------------------------------
 publish as this:
 
 dotnet publish --os linux  --arch x64 /t:PublishContainer -c Release
 
-some other container tags:
+Normal build will work but is not building a docker image.some other container tags:
 
 By default, the /app directory value is used as the working directory.
     <ContainerWorkingDirectory>/bin</ContainerWorkingDirectory>
@@ -18,6 +22,12 @@ Value: The value of the label (this may be empty).
 Warning: this will produce two images (of course) one tagged 'dbj-0.0.1' and one tagged 'latest'
 
 <ContainerImageTags>dbj-0.0.1;latest</ContainerImageTags>
+
+you need the following for Mr Blobby 
+
+<PackageReference Include="Azure.Storage.Blobs" Version="12.15.1" />
+<PackageReference Include="Azure.Storage.Common" Version="12.14.1" />
+<PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
 
 ]]>
 </Description>
@@ -38,6 +48,9 @@ Warning: this will produce two images (of course) one tagged 'dbj-0.0.1' and one
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Microsoft.NET.Build.Containers" Version="0.4.0" />
+        <PackageReference Include="Azure.Storage.Blobs" Version="12.15.1" />
+    <PackageReference Include="Azure.Storage.Common" Version="12.14.1" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>
 </Project>
 
