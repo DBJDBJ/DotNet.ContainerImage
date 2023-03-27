@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+  <PropertyGroup>
+    <Description>
+<![CDATA[
+publish as this:
+
+dotnet publish --os linux  --arch x64 /t:PublishContainer -c Release
+
+some other container tags:
+
+By default, the /app directory value is used as the working directory.
+    <ContainerWorkingDirectory>/bin</ContainerWorkingDirectory>
+
+Include: The key of the label.
+Value: The value of the label (this may be empty).
+     <ContainerLabel Include="company-domain" Value="dbj.systems" />
+
+Warning: this will produce two images (of course) one tagged 'dbj-0.0.1' and one tagged 'latest'
+
+<ContainerImageTags>dbj-0.0.1;latest</ContainerImageTags>
+
+]]>
+</Description>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-DotNet.ContainerImage-2cb694a9-5459-404b-8425-a34e30271b55</UserSecretsId>
+    <ContainerImageName>sasser-image</ContainerImageName>
+    <ContainerImageTags>dbj-0.0.1;latest</ContainerImageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ContainerPort Include="1234" Type="tcp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="0.4.0" />
+  </ItemGroup>
+</Project>
+
